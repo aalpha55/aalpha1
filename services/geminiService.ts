@@ -1,10 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY || '';
-
 // Initialize the client
-// Note: In a real production app, you might want to handle the missing key more gracefully in the UI.
-const ai = new GoogleGenAI({ apiKey });
+// Use process.env.API_KEY directly as per guidelines
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const SYSTEM_INSTRUCTION = `
 You are FinVantage, a world-class professional financial advisor AI. 
@@ -17,10 +15,6 @@ Do not speculate on highly volatile "pump and dump" assets. Focus on long-term s
 
 export const generateFinancialAdvice = async (query: string): Promise<string> => {
   try {
-    if (!apiKey) {
-      return "Error: API Key is missing. Please check your configuration.";
-    }
-
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: query,
@@ -39,8 +33,6 @@ export const generateFinancialAdvice = async (query: string): Promise<string> =>
 
 export const generateMarketSummary = async (): Promise<string> => {
   try {
-     if (!apiKey) return "Market data unavailable.";
-     
      const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: "Generate a brief, fictional but realistic daily market summary for a tech-heavy portfolio. Keep it under 50 words.",
