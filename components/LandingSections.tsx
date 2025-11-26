@@ -32,8 +32,8 @@ export const Hero: React.FC = () => {
             <span className="text-xs font-semibold uppercase tracking-wider text-brand-red">Exclusive Partnership</span>
           </div>
           
-          <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Aon x WFG <br/>
+          <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl font-sans">
+            <span className="text-[#E61B2E]">AON</span> x WFG <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-orange">Advisor Playbook</span>
           </h1>
           

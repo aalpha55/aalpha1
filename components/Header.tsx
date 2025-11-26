@@ -21,8 +21,8 @@ export const Header: React.FC = () => {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
-          <span className="text-2xl font-bold tracking-tight text-white">
-            WFG <span className="text-brand-red">Playbook</span>
+          <span className="text-2xl font-bold tracking-tight text-white font-sans">
+            <span className="text-[#E61B2E]">AON</span> x WFG <span className="text-brand-red">Playbook</span>
           </span>
         </div>
 
